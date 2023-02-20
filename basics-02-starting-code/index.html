@@ -16,16 +16,11 @@
     <header>
       <h1>Vue Course Goals</h1>
     </header>
-    <section id="user-goal">
-      <h2>My Course Goal</h2>
-      <p>{{ courseGoal }}</p>
-      <p v-html="courseGoalC"></p>
-      <!-- this syntax is interpolation:it means we can reference the properties that is part of object
-         which is returned in data  -->
-      <p>Learn more <a v-bind:href="vueLink">about Vue</a></p>
-      <!-- we cannot use interpolation on attributes so we use binding on attributes   -->
-      <p>{{outputGoal()}}</p>
-      <p>{{outputGoal2()}}</p>
+    <section id="interaction">
+      <h2>Events in Action</h2>
+      <button v-on:click="counter++">Add</button>
+      <button v-on:click="counter--">Reduce</button>
+      <p>Result: {{ counter }}</p>
     </section>
   </body>
 </html>
