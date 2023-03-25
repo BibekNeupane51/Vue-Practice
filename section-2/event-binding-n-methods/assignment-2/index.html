@@ -17,10 +17,19 @@
       <h1>Vue Course Goals</h1>
     </header>
     <section id="interaction">
-      <h2>Events in Action</h2>
-      <button v-on:click="counter++">Add</button>
-      <button v-on:click="counter--">Reduce</button>
-      <p>Result: {{ counter }}</p>
+      <h2>Assignment 2</h2>
+
+      <button v-on:click="myAlert">Alert</button>
+
+      <form action="" v-on:submit.prevent="submitForm">
+        <input
+          type="text"
+          placeholder="enter your name"
+          v-on:keyup.down="setMyName"
+        />
+        <p>Your Name: {{name}}</p>
+      </form>
+      <p v-once>Once count: {{counter}}</p>
     </section>
   </body>
 </html>
