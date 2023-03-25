@@ -14,13 +14,14 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Events</h1>
     </header>
-    <section id="interaction">
-      <h2>Events in Action</h2>
-      <button v-on:click="counter++">Add</button>
-      <button v-on:click="counter--">Reduce</button>
-      <p>Result: {{ counter }}</p>
+
+    <!-- //data binding + event binding -->
+    <section id="events">
+      <button @click="add(5)">Add 5</button>
+      <button @click="add(1)">Add 1</button>
+      <p>Result: {{ result }}</p>
     </section>
   </body>
 </html>
