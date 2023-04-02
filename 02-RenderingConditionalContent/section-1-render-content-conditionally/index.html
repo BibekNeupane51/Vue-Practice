@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- example of rendering content conditionally
+    Here in below example we input goals and if there is no goal
+   "no goals have been added" paragraph is displayed but if you have
+    goal we should not display that paragraph
+ instead we display list of goals which is taken from input -->
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="inputGoal" />
+      <button @click="addGoal">Add Goal</button>
+      <p v-if="goals.length == 0">
+        <!-- there is another option called v-show which not completely
+           hide html elements like v-if but make it hidden using display property of css -->
+        No goals have been added yet - please start adding some!
+      </p>
+      <ul v-else>
+        <li v-for="(goal, index) in goals" @click="removeGoal(index)">
+          {{goal}}
+        </li>
+        <!-- we use v-for for rendering list of content as above "goal in goals" 
+          we use "in" instead of "of" as in js like "const goal of goals" -->
+        <!-- v-for add new element on every array element of the array in this case goals -->
+      </ul>
+
+      <!-- getting deep with v-for in below commented exampla -->
+      <!-- <ul>
+        <li v-for="num in 10">{{num}}</li>
+        <li v-for="(bio, key, index) in {name:'bibek', age:'24'}">
+          {{index + 1}}- {{key}} : {{bio}}
+        </li>
+      </ul> -->
+    </section>
+  </body>
+</html>
+
+<!-- v-if completely hides html elements if conditions is not met ,   we use v-if,
+   v-else-if, v-else just like conditional statement on javascript -->
